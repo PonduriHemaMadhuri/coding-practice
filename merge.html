@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function mergeSort (arr) {
+  if (arr.length === 1) {
+    
+    return arr
+  }
+
+  const middle = Math.floor(arr.length / 2) 
+  const left = arr.slice(0, middle) 
+  const right = arr.slice(middle) 
+
+  return merge(
+    mergeSort(left),
+    mergeSort(right)
+  )
+}
+
+
+function merge (left, right) {
+  let result = []
+  let Left = 0
+  let Right = 0
+
+  while (Left < left.length && Right < right.length) {
+    if (left[Left] < right[Right]) {
+      result.push(left[Left])
+      indexLeft++
+    } else {
+      result.push(right[Right])
+      indexRight++
+    }
+  }
+
+  return result.concat(left.slice(Left)).concat(right.slice(Right))
+}
+
+const list = [2, 5, 1, 3, 7, 2, 3, 8, 6, 3]
+console.log(mergeSort(list)) 
+        </script>        
+    </body>
+</html>

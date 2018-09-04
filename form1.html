@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        function validatefunction() {
+            var fname = document.getElementById("fname").value;
+            var ex1 = /^[A-Za-z]*$/;
+            if (fname.length == "" || !fname.match(ex1)) {
+                document.getElementById("ex1").innerHTML = "specify alphabets";
+                document.getElementById("ex1").style.color = "red";
+            }
+            else {
+                document.getElementById("ex1").innerHTML = "valid";
+                document.getElementById("ex1").style.color = "green";
+            }
+            var lname = document.getElementById("lname").value;
+            var ex2 = /^[A-Za-z]*$/;
+            if (lname.length == "" || !lname.match(ex2)) {
+                document.getElementById("ex2").innerHTML = "specify alphabets";
+                document.getElementById("ex2").style.color = "red";
+            }
+            else {
+                document.getElementById("ex2").innerHTML = "valid";
+                document.getElementById("ex2").style.color = "green";
+            }
+            var pwd = document.getElementById("pwd").value;
+            var ex3 = /^[A-Za-z0-9!@#$%^&*()-_+]{6,8}$/;
+            if (pwd.length == "" || !pwd.match(ex3)) {
+                document.getElementById("ex3").innerHTML = "password must be with in range";
+                document.getElementById("ex3").style.color = "red";
+            }
+            else {
+                document.getElementById("ex3").innerHTML = "valid";
+                document.getElementById("ex3").style.color = "green";
+            }
+
+            var pwd = document.getElementById("pwd").value;
+            var cpwd = document.getElementById("cpwd").value;
+            if (pwd == cpwd) {
+                document.getElementById("ex4").innerHTML = "password matched";
+                document.getElementById("ex4").style.color = "green";
+            }
+            else {
+                document.getElementById("ex4").innerHTML = "incorrectmatch";
+                document.getElementById("ex4").style.color = "red";
+            }
+
+        }
+    </script>
+    <form name="myform" method="get">
+        firstName:
+        <input type="text" name="name" placeholder="fname" id="fname">
+        <label id="ex1"></label>
+        </br>
+        </br>
+        LastName:
+        <input type="text" name="name" placeholder="lname" id="lname">
+        <label id="ex2"></label>
+        </br>
+        </br>
+        Password:
+        <input type="password" name="password" placeholder="password" id="pwd">
+        <label id="ex3"></label>
+        </br>
+        </br>
+        ConfirmPassword:
+        <input type="password" name="password" placeholder="confirm password" id="cpwd">
+        <label id="ex4"></label>
+        </br>
+        </br>
+        <button type="button" id="button" onclick="validatefunction()">Submit</button>
+    </form>
+</body>
+
+</html>

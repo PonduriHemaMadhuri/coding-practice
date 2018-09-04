@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        var row = 5;
+        var x = " ";
+        for (i = 5; i >= row - i - 4; i--) {
+            for (j = 1; j <= i; j++) {
+                x += "*";
+            }
+            for (k = 1; k <= row; k++) {
+                x += " ";
+            }
+            console.log(x);
+            x = " ";
+        }
+    </script>
+</body>
+
+</html>

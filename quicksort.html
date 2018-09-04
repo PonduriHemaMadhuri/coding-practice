@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <meta charset="utf-8">
+  <title></title>
+  </head>
+  <body>
+      <script>
+    function quick(Array) {
+        if (Array.length <= 1) { 
+            return Array;
+        } else {
+    
+            var l = [];
+            var righteft = [];
+            var Array1 = [];
+            var pivot = Array.pop();
+            var length = Array.length;
+    
+            for (var i = 0; i < length; i++) {
+                if (Array[i] <= p) {
+                    left.push(Array[i]);
+                } else {
+                    right.push(Array[i]);
+                }
+            }
+    
+            return Array.concat(quick(left), p, quick_Sort(right));
+        }
+    }
+
+    var Array = [3, 0, 2, 5, -1, 4, 1 ];
+    
+    console.log("Original array: " + Array);
+    var sortedArray = quick(Array);
+    console.log("Sorted array: " + sortedArray);
+</script>
+  </body>
+</html>
